@@ -1,0 +1,66 @@
+/* src/App.css */
+/* Ensure the app takes full height */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  animation: pop 1s infinite alternate;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 10px 0 40px;
+}
+
+/* Pulsating animation for the headline */
+@keyframes pop {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+/* Balloon styling and animation */
+.balloon {
+  width: 50px;
+  height: 70px;
+  border-radius: 50% 50% 50% 50%;
+  position: absolute;
+  bottom: -100px;
+  animation: float 6s infinite ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.string {
+  width: 2px;
+  height: 40px;
+  background: #fff;
+  margin: 0 auto;
+}
+
+/* Keyframes for the balloon floating effect */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateY(-70vh) rotate(15deg); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(-15deg); opacity: 0; }
+}
